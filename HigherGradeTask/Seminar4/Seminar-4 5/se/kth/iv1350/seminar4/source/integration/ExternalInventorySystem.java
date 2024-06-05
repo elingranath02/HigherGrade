@@ -12,7 +12,7 @@ public class ExternalInventorySystem {
      * Method for being able to store and add items in the inventory system.
      * Is also used for being able to run the fake execution.
      */
-    private ExternalInventorySystem() {
+    public ExternalInventorySystem() {
         fakeInventorySystem = new ArrayList<>();
         initializeInventory();
     }

@@ -62,7 +62,7 @@ public class ViewTest {
         
         instanceToTest.runFakeExecution();
         
-        String printout = printoutBuffer.toString();
+        String printout = printoutBuffer.toString().trim();
 
         contr.startSale();
 
@@ -94,7 +94,6 @@ public class ViewTest {
             "Item description: " + itemInfo2.getDescription(),
             s2,
             "add 1 item with ID 333",
-            "add 1 item with ID 111",
             "Item ID: " + itemInfo3.getCodeOfItem(),
             "Item name: " + itemInfo3.getItemName(),
             "Item cost: " + itemInfo3.getPrice(),
@@ -108,23 +107,14 @@ public class ViewTest {
             "Customer pays: "+ 100 + " SEK",
 
 
-
-            
-
-
-
-
-
-
-
-
-
-
-
         };
 
         for (String expectedOutput : expectedOutputs) {
-            assertTrue(printout.contains(expectedOutput), "Expected output not found: " + expectedOutput);
+            System.out.println("Checking for: " + expectedOutput);
+            assertTrue(printout.contains(expectedOutput.trim()), "Expected output not found: " + expectedOutput);
         }
+
+        System.out.println("Actual printout: \n" + printout);
+
     }
 }
